@@ -32,4 +32,16 @@ h1 {
   letter-spacing: -0.02em; 
 }
 
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next,
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-next:hover {
+  color: black !important;
+  font-size: 24px; 
+}
 
+.ant-carousel .slick-prev::before,
+.ant-carousel .slick-next::before {
+  color: black !important;
+  opacity: 0.75;
+}
