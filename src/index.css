@@ -1,0 +1,35 @@
+@layer tailwind-base, antd;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+
+  --font-main: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, sans-serif;
+  margin: 0;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .ant-typography {
+  font-family: var(--font-main) !important;
+  font-weight: 600;
+}
+
+h1 {
+  letter-spacing: -0.02em; 
+}
+
+

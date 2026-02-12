@@ -1,0 +1,9 @@
+import { io, Socket } from 'socket.io-client';
+
+const SOCKET_URL = import.meta.env.VITE_SERVER_BASE_URL;
+
+export const socket: Socket = io(SOCKET_URL, {
+  path: '/ws',
+  autoConnect: true, 
+  transports: ['websocket']
+});
