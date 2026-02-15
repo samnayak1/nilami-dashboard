@@ -72,7 +72,7 @@ export const MyBidsTable = () => {
           className: 'cursor-pointer hover:bg-fresh-light/20 transition-colors'
         })}
         pagination={{
-          pageSize: 10,
+          pageSize: 5,
           showSizeChanger: false,
           position: ['bottomCenter'],
         }}

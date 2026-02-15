@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import CategoriesList from "../components/CategoriesList";
 
 import LatestItems from "../components/LatestItems";
@@ -7,20 +8,23 @@ import { MyBidsTable } from "../components/MyBidsTable";
 
 
 function DashboardPage() {
- 
-     
 
-    return (  
-    
-    <div>
-      
-   
+const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
 
-        <CategoriesList/>
-        <LatestItems />
+    return (
 
-        <MyBidsTable/>
-    </div>);
+        <div>
+
+            <CategoriesList 
+            selectedCategoryId={selectedCategory}
+            onSelectCategory={setSelectedCategory} 
+          
+            />
+            <LatestItems categoryId={selectedCategory}/>
+
+            <MyBidsTable />
+        </div>
+        );
 }
 
 export default DashboardPage;

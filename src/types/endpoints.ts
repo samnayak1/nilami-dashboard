@@ -14,7 +14,9 @@ export enum ApiEndpoints {
 
     ADD_PICTURES = '/api/v1/items/pictures',
 
-    GET_USERS_BIDS = '/api/v1/bids/all/user'
+    GET_USERS_BIDS = '/api/v1/bids/all/user',
+
+    SEARCH_ITEMS = '/api/v1/items/search',
 
 
 

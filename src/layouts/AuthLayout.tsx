@@ -28,7 +28,7 @@ function AuthLayout() {
                             <img src={winBidImage} className="rounded-2xl shadow-lg border border-wheat" />
                         </div>
                         <div className="w-full md:w-1/2 px-4">
-                            <h3 className="text-2xl font-bold text-earth mb-4">Sign up now and get $10 worth of free credits.</h3>
+                            <h3 className="text-2xl font-bold text-earth mb-4">Sign up now and get $100 worth of free credits.</h3>
         
                         </div>
                     </div>

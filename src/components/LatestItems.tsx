@@ -8,10 +8,10 @@ import { useItemRooms } from "../hooks/ItemRoomsSocketHook";
 import type { BidPlacedPayload, ItemsResponse, Item } from "../types";
 import ItemCard from "./ItemCard";
 
-function LatestItems() {
+function LatestItems({categoryId}:{categoryId?:string}) {
 
   const [currentPage, setCurrentPage] = useState(0);
-  const { data, isLoading, isError } = useItems(currentPage, 10);
+  const { data, isLoading, isError } = useItems(currentPage, 10, categoryId);
   const queryClient = useQueryClient();
 
   useItemRooms(data?.content);

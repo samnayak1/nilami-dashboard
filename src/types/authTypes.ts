@@ -47,6 +47,10 @@ export interface UserInfo{
     username: string;
     email: string;
     roles: UserRoles[];
+    balance: number;
+    address: string;
+    bio: string | null;
+    created: string;
   }
 
 export type AuthResponseType={

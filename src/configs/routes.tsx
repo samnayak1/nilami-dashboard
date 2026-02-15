@@ -7,6 +7,7 @@ import ProtectedRoute from "../components/ProtectedRoute";
 import ItemDetailPage from "../components/ItemDetails";
 import AuthLayout from "../layouts/AuthLayout";
 import DashboardPage from "../pages/DashboardPage";
+import UserDetailsLayout from "../layouts/UserDetailsLayout";
 
 
 export const router = createBrowserRouter([
@@ -14,18 +15,22 @@ export const router = createBrowserRouter([
     path: '/auth',
     element: <AuthLayout />,
     children: [
-    { index: true, element: <Navigate to="login" replace /> },
-    { path: 'login', element: <AuthPage /> },
-    { path: 'signup', element: <AuthPage /> },
-  ]
- },
+      { index: true, element: <Navigate to="login" replace /> },
+      { path: 'login', element: <AuthPage /> },
+      { path: 'signup', element: <AuthPage /> },
+    ]
+  },
   {
     path: '/',
-    element:  <ProtectedRoute><MainLayout /></ProtectedRoute>, 
+    element: <ProtectedRoute><MainLayout /></ProtectedRoute>,
     children: [
       { index: true, element: <Navigate to="/dashboard" replace /> },
       { path: 'dashboard', element: <DashboardPage /> },
-      { path: 'items/:id', element: <ItemDetailPage /> }
+      { path: 'items/:id', element: <ItemDetailPage /> },
+      { path: '/*', element: <Navigate to="/dashboard" replace /> },
+      { path: '/profile', element: < UserDetailsLayout /> }
+
+
     ],
   },
 ]);
