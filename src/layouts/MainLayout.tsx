@@ -157,7 +157,7 @@ function MainLayout() {
                     open={isModalOpen}
                     onCancel={handleClose}
                     footer={null}
-                    destroyOnClose
+                    destroyOnHidden={true}
                     width={700}
                 >
                     <CreateItemForm onSuccess={handleClose} onCancel={handleClose} />

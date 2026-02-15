@@ -25,9 +25,11 @@ const hasMoreThanLimit = data?.content && data.content.length > 8;
 return (
   <Card loading={isLoading} className="bg-fresh-light border-2 my-10">
     <h2 className="text-left text-xl mb-6 font-semibold text-pink-red">Browse Categories</h2>
+  { selectedCategoryId &&
     <Button type="link" onClick={() => onSelectCategory(undefined)} className="text-earth">
           Clear Filter
         </Button>
+        }
     
     <Flex wrap gap="small">
       {categoriesToDisplay?.map((category) => {
