@@ -1,11 +1,15 @@
 import { ClipLoader } from "react-spinners";
 import { useValidateSession } from "../hooks/ValidateTokenHook";
-
+import { useState } from "react";
+import TopUpBalance from "../components/TopupBalance";
+import { Dialog, DialogPanel } from '@headlessui/react';
 function UserDetailsLayout() {
 
     const { data, isLoading, isError } = useValidateSession();
+    const [isOpen, setIsOpen] = useState(false);
      if(isLoading){
-            return <p><ClipLoader color="#36d7b7" loading={isLoading} size={50} /></p>
+            return <p>
+              <ClipLoader color="#36d7b7" loading={isLoading} size={50} /></p>
         }
 
     if(isError){
@@ -57,9 +61,22 @@ function UserDetailsLayout() {
             <div className="text-cream text-4xl font-mono font-bold">
               ${data?.userInfo.balance?.toLocaleString() || "0.00"}
             </div>
-            <button className="mt-4 w-full py-2 bg-white/10 hover:bg-white/20 text-cream text-xs rounded-lg transition-colors border border-white/10">
-              + Top Up Wallet
-            </button>
+                 <button 
+        onClick={() => setIsOpen(true)}
+        className="mt-4 w-full py-2 bg-white/10 hover:bg-white/20 text-cream text-xs rounded-lg transition-colors border border-white/10"
+      >
+        + Top Up Wallet
+      </button>
+
+      <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+        
+        <div className="fixed inset-0 flex items-center justify-center p-4">
+          <DialogPanel className="bg-white rounded-lg p-6 max-w-md w-full">
+            <TopUpBalance />
+          </DialogPanel>
+        </div>
+      </Dialog>
           </div>
         </div>
       </div>

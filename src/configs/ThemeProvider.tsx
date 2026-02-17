@@ -45,27 +45,18 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           colorPrimary: earthyPalette.brown,
           colorSuccess: earthyPalette.fresh,
           colorInfo: earthyPalette.brown,
-          
-   
           colorBgLayout: earthyPalette.cream,
           colorBgContainer: earthyPalette.white,
-          
-       
           colorText: earthyPalette.mainText,
           colorTextDescription: earthyPalette.mutedText,
           colorTextDisabled: earthyPalette.lightText,
-          
-       
           colorBorder: earthyPalette.border,
           colorBorderSecondary: earthyPalette.beige,
-          
-         
           fontFamily: 'Poppins, sans-serif',
         },
         components: {
           Button: {
-          
-            colorSuccess: earthyPalette.fresh,
+           colorSuccess: earthyPalette.fresh,
             borderRadius: 4,
           },
           Card: {
@@ -73,7 +64,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
             colorBorderSecondary: earthyPalette.border,
           },
           Tag: {
-        
             colorSuccess: earthyPalette.fresh,
             colorSuccessBg: earthyPalette.freshLight,
           }
