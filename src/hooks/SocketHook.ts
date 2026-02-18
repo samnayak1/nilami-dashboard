@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useAccessToken } from '../store/useAuthStore';
-import { socket } from '../configs/socketClient';
+import { socket } from '../api/services/socketClient';
 
 export const useSocketInit = () => {
   const token = useAccessToken();

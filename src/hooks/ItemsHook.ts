@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import axiosClient from '../configs/axiosClient';
 
 import { ApiEndpoints } from '../types/endpoints';
 import type { ItemsResponse } from '../types';
+import axiosClient from '../api/services/axiosClient';
 
 
 const fetchItems = async (page: number, size: number, categoryId?: string) => {

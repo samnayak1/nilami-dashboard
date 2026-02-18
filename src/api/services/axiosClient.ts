@@ -1,8 +1,8 @@
 import axios from 'axios';
-import useAuthStore from '../store/useAuthStore';
+import useAuthStore from '../../store/useAuthStore';
+import type { AuthResponseType, RefreshTokenRequestType } from '../../types';
+import { ApiEndpoints } from '../../types/endpoints';
 
-import { ApiEndpoints } from '../types/endpoints';
-import type { AuthResponseType, RefreshTokenRequestType } from '../types';
 
 const axiosClient = axios.create({
   baseURL: import.meta.env.VITE_SERVER_BASE_URL,

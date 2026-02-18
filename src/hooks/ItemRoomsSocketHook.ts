@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { socket } from '../configs/socketClient';
+import { socket } from '../api/services/socketClient';
 import type { Item } from '../types';
 
 

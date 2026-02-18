@@ -1,9 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
-import axiosClient from "../configs/axiosClient";
+
 import { message } from "antd";
 import type { ApiResponse } from "../types/apiResponseTypes";
 import { ApiEndpoints } from "../types/endpoints";
 import type { SignUpRequestType, User } from "../types";
+import axiosClient from "../api/services/axiosClient";
 
 
 const signupUser = async (data: SignUpRequestType) => {

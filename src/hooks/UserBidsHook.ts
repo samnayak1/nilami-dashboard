@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 
-import axiosClient from "../configs/axiosClient";
+
 import { ApiEndpoints } from "../types/endpoints";
 import type { UserBid, UserBidsResponse } from "../types";
+import axiosClient from "../api/services/axiosClient";
 
 export const useUserBids = () => {
   return useQuery<UserBid[]>({

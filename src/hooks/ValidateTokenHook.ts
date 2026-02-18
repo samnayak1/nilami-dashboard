@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import axiosClient from "../configs/axiosClient";
 
 
 import useAuthStore from "../store/useAuthStore";
 import { ApiEndpoints } from "../types/endpoints";
 import type { ValdateTokenResponseType, ValidateTokenRequestType } from "../types";
+import axiosClient from "../api/services/axiosClient";
 
 const vaildateUser = async (data: ValidateTokenRequestType) => {
   const response = await axiosClient

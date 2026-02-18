@@ -110,7 +110,7 @@ function MainLayout() {
          
                     <div className="flex items-center gap-6">
               
-                        {data?.userInfo.roles.some(role => [UserRoles.ADMIN, UserRoles.SELLER].includes(role)) && (
+                        {data?.userInfo.roles.some((role: UserRoles) => [UserRoles.ADMIN, UserRoles.SELLER].includes(role)) && (
                             <Button
                                 type="primary"
                                 icon={<PlusCircleOutlined />}

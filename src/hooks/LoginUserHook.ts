@@ -1,9 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
-import axiosClient from "../configs/axiosClient";
+
 
 import { message } from "antd";
 import { ApiEndpoints } from "../types/endpoints";
 import type { LoginRequestType, LoginResponseType } from "../types";
+import axiosClient from "../api/services/axiosClient";
 
 
 

@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.tsx'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import StripeProvider from './configs/StripeProvider.tsx'
+import StripeProvider from './providers/StripeProvider.tsx'
 
 const queryClient = new QueryClient()
 createRoot(document.getElementById('root')!).render(

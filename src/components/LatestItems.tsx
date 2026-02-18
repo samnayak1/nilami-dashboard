@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useItems } from "../hooks/ItemsHook";
 import { Alert, Pagination, Spin } from "antd";
 import { useQueryClient } from "@tanstack/react-query";
-import { socket } from "../configs/socketClient";
+import { socket } from "../api/services/socketClient";
 
 import { useItemRooms } from "../hooks/ItemRoomsSocketHook";
 import type { BidPlacedPayload, ItemsResponse, Item } from "../types";

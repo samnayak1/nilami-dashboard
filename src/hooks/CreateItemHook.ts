@@ -1,10 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axiosClient from "../configs/axiosClient";
+
 
 import { ApiEndpoints } from "../types/endpoints";
 import { message } from "antd";
 import axios from "axios";
 import type { CreateItemPayload, CreateItemResponse } from "../types";
+import axiosClient from "../api/services/axiosClient";
 const s3Upload = axios.create();
 export const itemService = {
   createItem: async (payload: CreateItemPayload) => {

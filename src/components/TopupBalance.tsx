@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
-import axiosClient from '../configs/axiosClient';
+
 import { useNavigate } from 'react-router';
+import axiosClient from '../api/services/axiosClient';
 
 
 
@@ -74,7 +75,7 @@ function TopUpBalance() {
                         onChange={(e) => setAmount(parseFloat(e.target.value) || 0)}
                         className='border pl-2 rounded-md'
                         min="10"
-                        step="0.01"
+                        step="1"
                     />
                 </div>
 

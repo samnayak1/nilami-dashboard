@@ -1,9 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
 
-import axiosClient from "../configs/axiosClient";
+
 import { message, Modal } from "antd";
 import { ApiEndpoints } from "../types/endpoints";
 import type { CreateBidRequest } from "../types";
+import axiosClient from "../api/services/axiosClient";
 
 
 

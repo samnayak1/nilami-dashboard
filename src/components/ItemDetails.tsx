@@ -2,7 +2,7 @@ import {  useParams } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
 import { useItem } from '../hooks/SingleItemHook';
 import { useEffect, useState } from 'react';
-import { socket } from '../configs/socketClient';
+import { socket } from '../api/services/socketClient';
 import { Button, Card, InputNumber, List, Skeleton, Image, Carousel } from 'antd';
 import { useBidHistory } from '../hooks/BidHistoryHook';
 
@@ -100,7 +100,7 @@ function ItemDetailPage() {
         arrows
         autoplaySpeed={5000}
       >
-        {item.pictureIds.length > 0 && item.pictureIds.map((url, index) => (
+        {item.pictureIds.length > 0 && item.pictureIds.map((url: string, index:number) => (
           <div key={index}>
             <div className="flex items-center justify-center bg-gray-100 h-96">
               <Image
