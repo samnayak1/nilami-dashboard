@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
 import { useItem } from '../hooks/SingleItemHook';
 import { useEffect, useState } from 'react';
@@ -21,7 +21,7 @@ function ItemDetailPage() {
   useItemRooms(item ? [item] : []);
   const getIdempotent = useGetIdempotentKey();
   const createBid = useCreateBid();
-  const navigate = useNavigate();
+
 
   const handleBidFlow = () => {
 
@@ -94,16 +94,6 @@ function ItemDetailPage() {
     <div className="grid md:grid-cols-2 gap-8 mt-4">
       {/* Images of the item */}
     <div>
-      <div className="mb-6">
-    <Button 
-      type="text" 
-      icon={<div>↶</div>} 
-      onClick={() => navigate('/dashboard')}
-      className="flex items-center font-bold bg-fresh-light p-4"
-    >
-       Go Home
-    </Button>
-  </div>
       <Carousel
         className="w-full h-full overflow-hidden rounded-xl shadow-md p-8 bg-fresh-light"
         autoplay
@@ -134,7 +124,7 @@ function ItemDetailPage() {
 
 
       {/* Description of the item with price */}
-      <div className="bg-wheat row-span-2 text-main-text p-8 rounded-2xl shadow-xl flex flex-col gap-6">
+      <div className="bg-fresh-light row-span-2 text-main-text p-8 rounded-2xl shadow-xl flex flex-col gap-6">
 
         <div>
           <span className="text-sm">{item.brand}</span>

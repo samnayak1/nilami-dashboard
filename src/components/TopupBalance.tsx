@@ -62,28 +62,31 @@ function TopUpBalance() {
     };
 
     return (
-        <div>
-            <h2>Top Up Balance</h2>
+        <div className='p-6 flex flex-col items-center bg-fresh-light text-main-text'>
+            <h2 className='text-xl'>Top Up Balance</h2>
 
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Amount (USD)</label>
+            <form onSubmit={handleSubmit} className='flex flex-col gap-12 mt-4'>
+                <div className='flex w-full text-center gap-2'>
+                    <label>Enter Amount (USD)</label>
                     <input
                         type="number"
                         value={amount}
                         onChange={(e) => setAmount(parseFloat(e.target.value) || 0)}
-                        min="1"
+                        className='border pl-2 rounded-md'
+                        min="10"
                         step="0.01"
                     />
                 </div>
 
                 <div>
                     <label>Card Details</label>
-                    <CardElement />
+                    <CardElement options={CARD_ELEMENT_OPTIONS}/>
                 </div>
 
-                <button type="submit" disabled={!stripe || loading}>
-                    {loading ? 'Processing...' : `Pay $${amount.toFixed(2)}`}
+                <button
+                className='border py-2 text-cream bg-fresh px-4 '
+                type="submit" disabled={!stripe || loading}>
+                    {loading ? 'Processing...' : `Pay`}
                 </button>
             </form>
 
@@ -91,5 +94,22 @@ function TopUpBalance() {
         </div>
     );
 }
+
+const CARD_ELEMENT_OPTIONS = {
+  style: {
+    base: {
+      color: "#2e4d32", 
+      fontFamily: 'inherit',
+      fontSize: "16px",
+      "::placeholder": {
+        color: "#8c9b8d", 
+      },
+    },
+    invalid: {
+      color: "#9e2146", 
+      iconColor: "#9e2146",
+    },
+  },
+};
 
 export default TopUpBalance;
