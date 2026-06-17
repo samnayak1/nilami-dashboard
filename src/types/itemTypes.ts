@@ -40,8 +40,9 @@ export interface CategoryResponse {
 export interface CreateItemPayload {
   title: string;
   description: string;
-  basePrice: number;
+
   brand: string;
+  basePrice: number;
   categoryId: string;
   expiryTime: string; 
 }

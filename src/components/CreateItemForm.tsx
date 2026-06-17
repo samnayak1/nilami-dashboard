@@ -22,6 +22,7 @@ export const CreateItemForm = ({ onSuccess, onCancel }: { onSuccess: () => void;
     };
 
     const onFinish = (values: CreateItemPayload) => {
+      
         const filesToUpload = fileList
                  .map(f => f.originFileObj)
                  .filter((f): f is RcFile => !!f);
@@ -47,7 +48,9 @@ export const CreateItemForm = ({ onSuccess, onCancel }: { onSuccess: () => void;
             <Form.Item name="brand" label="Brand"><Input /></Form.Item>
             <Form.Item name="description" label="Description">
                 <Input.TextArea autoSize={{ minRows: 3, maxRows: 6 }} /></Form.Item>
-            <Form.Item name="basePrice" label="Starting Price">$ <InputNumber min={0} /></Form.Item>
+           <Form.Item name="basePrice" label="Starting Price">
+  <InputNumber min={0} style={{ width: "100%" }} />
+</Form.Item>
             <Form.Item name="expiryTime" label="End Date"><DatePicker showTime /></Form.Item>
 
             <Form.Item

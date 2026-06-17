@@ -1,23 +1,24 @@
 export enum ApiEndpoints {
+    // Auth Service
     LOGIN = '/api/auth/v1/login',
     VALIDATE_SESSION = '/api/auth/v1/validate-token',
     SIGNUP = '/api/auth/v1/signup',
     REFRESH_TOKEN = '/api/auth/v1/refresh',
-    DASHBOARD_ITEMS = '/api/auth/v1/items',
-    IDEMPOTENT_KEY = '/api/auth/v1/bids/idempotent',
-    CREATE_BID = '/api/auth/v1/bids/create',
-    BID_HISTORY = '/api/auth/v1/bids/all/',
-    GET_ITEMS= '/api/auth/v1/items',
-    GET_CATEGORIES = '/api/auth/v1/categories',
-    CREATE_ITEM = '/api/auth/v1/items',
-    GET_PRESIGNED_URL = '/api/auth/v1/items/file/presigned-url',
 
-    ADD_PICTURES = '/api/auth/v1/items/pictures',
+    // Catalog Service - Items
+    DASHBOARD_ITEMS = '/api/items/v1',
+    GET_ITEMS = '/api/items/v1',
+    CREATE_ITEM = '/api/items/v1',
+    GET_PRESIGNED_URL = '/api/items/v1/file/presigned-url',
+    ADD_PICTURES = '/api/items/v1/pictures',
+    SEARCH_ITEMS = '/api/items/v1/search',
 
-    GET_USERS_BIDS = '/api/auth/v1/bids/all/user',
+    // Catalog Service - Categories
+    GET_CATEGORIES = '/api/categories/v1',
 
-    SEARCH_ITEMS = '/api/auth/v1/items/search'
-
-
-
+    // Bid Service
+    IDEMPOTENT_KEY = '/api/bids/v1/idempotent',
+    CREATE_BID = '/api/bids/v1/create',
+    BID_HISTORY = '/api/bids/v1/all/',
+    GET_USERS_BIDS = '/api/bids/v1/all/user',
 }

@@ -71,9 +71,9 @@ async function refreshAccessToken(): Promise<string> {
   }
 
   const newData = await refreshAuthToken({
-    refreshToken,
-    userId: userInfo?.userId || ''
-  });
+  refreshToken,
+  userId: userInfo?.userId || ''
+});
 
   actions.setAuth({
     accessToken: newData.accessToken,

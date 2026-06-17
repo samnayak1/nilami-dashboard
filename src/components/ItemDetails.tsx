@@ -1,4 +1,4 @@
-import {  useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
 import { useItem } from '../hooks/SingleItemHook';
 import { useEffect, useState } from 'react';
@@ -93,32 +93,32 @@ function ItemDetailPage() {
   return (
     <div className="grid md:grid-cols-2 gap-8 mt-4">
       {/* Images of the item */}
-    <div>
-      <Carousel
-        className="w-full h-full overflow-hidden rounded-xl shadow-md p-8 bg-fresh-light"
-        autoplay
-        arrows
-        autoplaySpeed={5000}
-      >
-        {item.pictureIds.length > 0 && item.pictureIds.map((url: string, index:number) => (
-          <div key={index}>
-            <div className="flex items-center justify-center bg-gray-100 h-96">
-              <Image
-                className="object-cover h-full w-full"
-                src={url}
-                alt={`${item.title} - ${index + 1}`}
+      <div>
+        <Carousel
+          className="w-full h-full overflow-hidden rounded-xl shadow-md p-8 bg-fresh-light"
+          autoplay
+          arrows
+          autoplaySpeed={5000}
+        >
+          {item.pictureIds.length > 0 && item.pictureIds.map((url: string, index: number) => (
+            <div key={index}>
+              <div className="flex items-center justify-center bg-gray-100 h-96">
+                <Image
+                  className="object-cover h-full w-full"
+                  src={url}
+                  alt={`${item.title} - ${index + 1}`}
 
 
-              />
+                />
+              </div>
             </div>
+          ))}
+        </Carousel>
+        {item.pictureIds.length === 0 && (
+          <div className="flex items-center justify-center bg-gray-200 h-96">
+            <p>No Image Available</p>
           </div>
-        ))}
-      </Carousel>
-      {item.pictureIds.length === 0 && (
-        <div className="flex items-center justify-center bg-gray-200 h-96">
-          <p>No Image Available</p>
-        </div>
-      )}
+        )}
       </div>
 
 
@@ -141,17 +141,25 @@ function ItemDetailPage() {
         </div>
 
 
-     
+
 
 
         <div className="flex justify-between items-center mt-4 p-4 rounded-lg">
           <div>
-            <p className="text-xs uppercase opacity-70">Auction Ends In</p>
-            <p className="text-center text-lg font-bold">{new Date(item.expiryTime).toLocaleTimeString()}</p>
+            <p className="text-xs uppercase opacity-70">Auction Ends at</p>
+            <p className="text-center text-lg font-bold">{new Date(item.expiryTime).toLocaleString("en-IN", {
+              weekday: "short",
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true,
+            })}</p>
           </div>
 
         </div>
-           <div className="border-t border-white/20 pt-6">
+        <div className="border-t border-white/20 pt-6">
 
           <p className="leading-relaxed opacity-90 text-lg">
             {item.description}
